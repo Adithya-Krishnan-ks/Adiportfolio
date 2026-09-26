@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #030804;
+    color: #f1f5f9;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+/* Custom font for green text elements */
+.font-calibri {
+  font-family: 'Calibri', 'Carlito', 'Segoe UI', 'Candara', 'Optima', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030804;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00802b;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00cc44;
+}
+
+/* Glassmorphism card style with PERFECT RECTANGLES (rounded-none) */
+.glass-card {
+  background: rgba(5, 15, 8, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 180, 60, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+  border-radius: 0px !important;
+}
+
+.glass-card-hover {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-hover:hover {
+  border-color: rgba(0, 204, 68, 0.55);
+  box-shadow: 0 0 20px -3px rgba(0, 180, 60, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Darker green text styled with Calibri */
+.text-matrix-green {
+  color: #00cc44;
+  font-family: 'Calibri', 'Carlito', 'Segoe UI', sans-serif;
+}
