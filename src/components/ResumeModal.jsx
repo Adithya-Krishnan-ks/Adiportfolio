@@ -1,10 +1,11 @@
 import React from 'react';
 import { X, Download, ExternalLink, Printer, FileText } from 'lucide-react';
+import resumePdf from '../assets/Adithya_Krishnan_Resume.pdf';
 
 export default function ResumeModal({ isOpen, onClose }) {
   if (!isOpen) return null;
 
-  const pdfUrl = '/Adithya_Krishnan_Resume.pdf';
+  const pdfUrl = resumePdf;
 
   const handleDownload = () => {
     const link = document.createElement('a');
