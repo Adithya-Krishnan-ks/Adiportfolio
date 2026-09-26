@@ -42,24 +42,25 @@ export default function Navbar({ onOpenResume }) {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-        ? 'bg-black/90 backdrop-blur-xl border-b border-matrix/30 py-3 shadow-2xl shadow-black/80'
-        : 'bg-black/60 backdrop-blur-md py-4 border-b border-white/10'
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? 'bg-black/90 backdrop-blur-xl border-b border-matrix/40 py-3 shadow-2xl shadow-black/80'
+          : 'bg-black/60 backdrop-blur-md py-4 border-b border-white/10'
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-
-          {/* Logo / Brand Name */}
+          
+          {/* Logo / Brand Name with Glow */}
           <a
             href="#"
             className="flex items-center gap-2 text-lg sm:text-xl font-bold tracking-tight text-white group"
           >
-            <span className="w-9 h-9 bg-matrix flex items-center justify-center text-slate-950 font-black text-lg shadow-md shadow-matrix/30 group-hover:scale-105 transition-transform rounded-none">
+            <span className="w-9 h-9 bg-matrix flex items-center justify-center text-slate-950 font-black text-lg shadow-md shadow-matrix/30 group-hover:scale-105 group-hover:shadow-[0_0_20px_#00cc44] transition-all rounded-none">
               AK
             </span>
-            <span className="group-hover:text-matrix transition-colors">
-              Adithya <span className="text-matrix font-calibri font-bold">Krishnan</span>
+            <span className="group-hover:text-matrix group-hover:drop-shadow-[0_0_8px_#00cc44] transition-colors">
+              Adithya<span className="text-matrix font-calibri font-bold">.K</span>
             </span>
           </a>
 
@@ -71,10 +72,11 @@ export default function Navbar({ onOpenResume }) {
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`px-3.5 py-1.5 text-xs font-medium transition-all duration-200 rounded-none ${isActive
-                    ? 'bg-matrix/20 text-matrix border border-matrix/40 font-bold font-calibri shadow-sm'
-                    : 'text-gray-300 hover:text-white hover:bg-white/10'
-                    }`}
+                  className={`px-3.5 py-1.5 text-xs font-medium transition-all duration-200 rounded-none ${
+                    isActive
+                      ? 'bg-matrix/20 text-matrix border border-matrix/50 font-bold font-calibri shadow-[0_0_15px_rgba(0,204,68,0.4)]'
+                      : 'text-gray-300 hover:text-matrix hover:border hover:border-matrix/40 hover:bg-matrix/10 hover:shadow-[0_0_15px_rgba(0,204,68,0.3)]'
+                  }`}
                 >
                   {item.name}
                 </a>
@@ -86,7 +88,7 @@ export default function Navbar({ onOpenResume }) {
           <div className="flex items-center gap-3">
             <button
               onClick={onOpenResume}
-              className="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-matrix/10 hover:bg-matrix/20 text-matrix border border-matrix/30 text-xs font-semibold font-calibri tracking-wide transition-all rounded-none"
+              className="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-matrix/10 hover:bg-matrix hover:text-slate-950 text-matrix border border-matrix/40 text-xs font-semibold font-calibri tracking-wide transition-all duration-200 hover:shadow-[0_0_20px_rgba(0,204,68,0.6)] rounded-none"
             >
               <FileText className="w-3.5 h-3.5" />
               Resume
@@ -94,7 +96,7 @@ export default function Navbar({ onOpenResume }) {
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2.5 bg-black/80 border border-matrix/30 text-gray-200 hover:text-white focus:outline-none rounded-none"
+              className="lg:hidden p-2.5 bg-black/80 border border-matrix/30 text-gray-200 hover:text-matrix hover:border-matrix hover:shadow-[0_0_15px_rgba(0,204,68,0.4)] focus:outline-none rounded-none"
               aria-label="Toggle Navigation"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -104,7 +106,7 @@ export default function Navbar({ onOpenResume }) {
 
         {/* Mobile Nav Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden mt-3 p-4 bg-black/95 border border-matrix/30 backdrop-blur-2xl shadow-2xl rounded-none">
+          <div className="lg:hidden mt-3 p-4 bg-black/95 border border-matrix/40 backdrop-blur-2xl shadow-2xl rounded-none">
             <div className="flex flex-col gap-1">
               {navItems.map((item) => {
                 const Icon = item.icon;
@@ -113,7 +115,7 @@ export default function Navbar({ onOpenResume }) {
                     key={item.name}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-gray-200 hover:text-matrix hover:bg-matrix/10 transition-colors rounded-none"
+                    className="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-gray-200 hover:text-matrix hover:bg-matrix/10 hover:shadow-[0_0_15px_rgba(0,204,68,0.3)] border border-transparent hover:border-matrix/30 transition-all rounded-none"
                   >
                     <Icon className="w-4 h-4 text-matrix" />
                     {item.name}
@@ -126,7 +128,7 @@ export default function Navbar({ onOpenResume }) {
                     setMobileMenuOpen(false);
                     onOpenResume();
                   }}
-                  className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-matrix hover:bg-matrix-light text-slate-950 text-sm font-bold font-calibri shadow-lg shadow-matrix/25 rounded-none"
+                  className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-matrix hover:bg-matrix-light text-slate-950 text-sm font-bold font-calibri shadow-[0_0_20px_rgba(0,204,68,0.5)] rounded-none"
                 >
                   <FileText className="w-4 h-4" />
                   View Resume
